@@ -10,3 +10,5 @@
 - MySQL
 
 ## Arquitetura
+
+![Desenho da Arquitetura](.github/architecture.jpg)
