@@ -1,0 +1,1 @@
+from routes.wallet_routes import router as wallet_router
