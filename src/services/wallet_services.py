@@ -1,5 +1,7 @@
-import bcrypt
+import decimal
 
+import bcrypt
+from models import Wallet
 
 def hash_password(plain_password: str) -> str:
     salt = bcrypt.gensalt()
@@ -10,11 +12,13 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
     return bcrypt.checkpw(plain_password.encode('utf-8'), hashed_password.encode('utf-8'))
 
 
-def wallet_debit(wallet: dict, value: float) -> dict:
-    wallet['balance'] -= value
+def wallet_debit(wallet: Wallet, value: float) -> Wallet:
+    wallet.balance = float(wallet.balance)
+    wallet.balance -= value
     return wallet
 
 
-def wallet_credit(wallet: dict, value: float) -> dict:
-    wallet['balance'] += value
+def wallet_credit(wallet: Wallet, value: float) -> Wallet:
+    wallet.balance = float(wallet.balance)
+    wallet.balance += value
     return wallet

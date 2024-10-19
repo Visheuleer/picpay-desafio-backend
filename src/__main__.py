@@ -1,12 +1,13 @@
 from fastapi import FastAPI
 from mysqldb import db_connection
 from models import Base
-from routes import wallet_router
+from routes import wallet_router, transaction_router
 
 
 
 app = FastAPI()
 app.include_router(wallet_router)
+app.include_router(transaction_router)
 
 if __name__ == "__main__":
     import uvicorn

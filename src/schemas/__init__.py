@@ -1,1 +1,2 @@
 from schemas.wallet_schemas import WalletSchemaCreate
+from schemas.transaction_schemas import TransactionSchemaCreate

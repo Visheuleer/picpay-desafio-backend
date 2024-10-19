@@ -1,5 +1,4 @@
 from fastapi import APIRouter, HTTPException, status
-from models import Wallet
 from schemas import WalletSchemaCreate
 from services import wallet_services
 from repositories import wallet_repository
